@@ -1,0 +1,229 @@
+input[type="checkbox"] {
+  display: none;
+}
+.toggle-switch div {
+  width: 78px;
+  height: 20px;
+  border-radius: 16px;
+  background-color: #ccc;
+  cursor: pointer;
+  position: relative;
+  transition-duration: var(--main-duration);
+}
+.toggle-switch:has(input[type="checkbox"]:checked) div {
+  background-color: var(--blue-c);
+}
+.toggle-switch div::before {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  content: '\f00d';
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  font-size: 8px;
+  color: #aaa;
+  transition-duration: var(--main-duration);
+}
+.toggle-switch:has(input[type="checkbox"]:checked) div::before {
+  content: '\f00c';
+  left: 62px;
+  color: var(--blue-c);
+}
+@media (min-width: 992px) {
+  .wrapper {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+/* Overview Start */
+@media (min-width: 768px) {
+  .overview {
+    display: flex;
+    align-items: center;
+  }
+}
+@media (min-width: 992px) {
+  .overview {
+    grid-column: span 6;
+  }
+}
+.overview .avatar-box,
+.overview .info-boxes .box {
+  padding: 20px;
+}
+/* Avatar Box Start */
+.overview .avatar-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .overview .avatar-box {
+    border-right: 1px solid #eee;
+    width: 300px;
+  }
+}
+.overview img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+.overview .avatar-box span {
+  color: var(--grey-c);
+}
+.overview .progress-bg {
+  width: 150px;
+  height: 4px;
+  border-radius: 2px;
+  overflow: hidden;
+  background-color: #eee;
+  position: relative;
+}
+.overview .progress-c {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background-color: var(--blue-c);
+}
+.overview i {
+  font-size: 14px;
+  color: var(--orange-c);
+}
+.overview .rating {
+  font-size: 13px;
+}
+/* Avatar Box End */
+/* Info Boxes Start */
+.info-boxes {
+  flex-grow: 1;
+}
+.info-boxes .box {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  transition-duration: var(--main-duration);
+}
+.info-boxes .box:hover {
+  background-color: #f9f9f9;
+}
+.info-boxes .box:not(:last-of-type) {
+  border-bottom: 1px solid #eee;
+}
+@media (max-width: 767.98px) {
+  .info-boxes .box {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (min-width: 768px) {
+  .info-boxes h4 {
+    width: 100%;
+  }
+  .info-boxes .box > div,
+  .info-boxes label {
+    min-width: 250px;
+  }
+}
+.info-boxes h4 {
+  font-size: 15px;
+}
+.info-boxes span {
+  font-size: 14px;
+}
+.info-boxes h4,
+.info-boxes span:first-child {
+  color: var(--grey-c);
+}
+/* Info Boxes End */
+/* Overview End */
+/* Skills & Activities Start */
+.skills,
+.activities {
+  padding: 20px;
+}
+h2 + p {
+  margin: 10px 0 20px;
+  font-size: 15px;
+  color: var(--grey-c);
+}
+@media (max-width: 992px) {
+  h2,
+  h2 + p {
+    text-align: center;
+  }
+}
+/* Skills & Activities End */
+/* Skills Start */
+.skills div {
+  padding: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.skills div:not(:last-of-type) {
+  border-bottom: 1px solid #eee;
+}
+.skills span {
+  border-radius: var(--main-radius);
+  padding: var(--btn-padding);
+  background-color: #eee;
+  font-size: 14px;
+}
+@media (max-width: 992px) {
+  .skills div {
+    justify-content: center;
+  }
+}
+@media (min-width: 992px) {
+  .skills {
+    grid-column: 1 / 3;
+  }
+}
+/* Skills End */
+/* Activities Start */
+.activities > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.activities > div:not(:last-of-type) {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 20px;
+}
+.activities img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+}
+.activities .info {
+  flex-grow: 1;
+}
+.activities span:last-of-type {
+  display: block;
+  margin-top: 5px;
+  color: var(--grey-c);
+}
+@media (max-width: 992px) {
+  .activities > div {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+@media (min-width: 992px) {
+  .activities {
+    grid-column: 3 / 7;
+  }
+  .activities .date {
+    text-align: right;
+  }
+}
+/* Activities End */

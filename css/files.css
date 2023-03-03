@@ -1,0 +1,147 @@
+.files-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+@media (min-width: 768px) {
+  .files-content {
+    flex-direction: row-reverse;
+    align-items: start;
+    gap: 20px;
+  }
+}
+.files-content .stats {
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .files-content .stats {
+    width: 260px;
+  }
+}
+.files-content h2 {
+  margin-bottom: 15px;
+}
+@media (max-width: 767.98px) {
+  .files-content h2 {
+    text-align: center;
+  }
+}
+.files-content .stats > div {
+  border-radius: var(--main-radius);
+  border: 1px solid #eee;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+}
+.files-content .stats > div:not(:first-of-type) {
+  margin-top: 15px;
+}
+.files-content .stats div i {
+  margin-right: 10px;
+  border-radius: var(--main-radius);
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+}
+.files-content .pdf i {
+  background-color: var(--blue-bg);
+  color: var(--blue-c);
+}
+.files-content .img i {
+  background-color: var(--green-bg);
+  color: var(--green-c);
+}
+.files-content .wrd i {
+  background-color: var(--red-bg);
+  color: var(--red-c);
+}
+.files-content .csv i {
+  background-color: var(--orange-bg);
+  color: var(--orange-c);
+}
+.files-content span {
+  color: var(--grey-c);
+}
+.files-content .stats > div > span {
+  margin-left: auto;
+}
+.files-content button {
+  border: none;
+  border-radius: var(--main-radius);
+  display: block;
+  width: fit-content;
+  margin: 20px auto 0;
+  padding: 10px 15px;
+  color: white;
+  background-color: var(--blue-c);
+  cursor: pointer;
+  transition-duration: var(--main-duration);
+}
+.files-content button:hover {
+  background-color: var(--blue-alt-c);
+}
+.files-content button i {
+  margin-right: 5px;
+}
+.files-content button:hover i {
+  animation: go-up .8s infinite;
+}
+@keyframes go-up {
+  50% {
+    transform: translateY(-5px);
+  }
+}
+@media (min-width: 768px) {
+  .wrapper {
+    flex-grow: 1;
+    padding-right: 5px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    max-height: calc(100vh - 192px);
+    overflow-y: auto;
+  }
+  .wrapper::-webkit-scrollbar {
+    width: 5px;
+  }
+  .wrapper::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  .wrapper::-webkit-scrollbar-thumb {
+    border-radius: 2.5px;
+  }
+}
+.wrapper > div {
+  padding: 10px;
+}
+.wrapper i,
+.wrapper span {
+  color: var(--grey-c);
+}
+.wrapper > div > div:first-of-type {
+  text-align: center;
+}
+.wrapper img {
+  width: 64px;
+  height: 64px;
+  transition-duration: var(--main-duration);
+}
+.wrapper > div:hover img {
+  transform: rotate(6deg);
+}
+.wrapper h4 {
+  margin: 15px 0 10px;
+  font-size: 14px;
+  font-weight: normal;
+  text-transform: lowercase;
+}
+.wrapper span {
+  font-size: 13px;
+}
+.wrapper > div > div:last-of-type {
+  margin-top: 10px;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}

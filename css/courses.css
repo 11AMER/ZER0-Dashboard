@@ -1,0 +1,60 @@
+@media (min-width: 768px) {
+  .wrapper {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+.wrapper > div {
+  overflow: hidden;
+}
+.wrapper > div > img {
+  width: 100%;
+}
+.wrapper .content {
+  padding: 15px;
+  text-align: center;
+}
+.wrapper .content p {
+  margin-top: 5px;
+  line-height: 1.6;
+  font-size: 15px;
+  color: var(--grey-c);
+}
+.wrapper .info {
+  margin-top: 20px;
+  border-top: 1px solid #eee;
+  padding: 20px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.wrapper .info > .title {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -50%);
+  border-radius: var(--main-radius);
+  padding: var(--btn-padding);
+  background-color: var(--blue-c);
+  color: white;
+  font-size: 13px;
+}
+.wrapper .info img {
+  border: 2px solid white;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition-duration: var(--main-duration);
+}
+.wrapper .info img:not(:first-of-type) {
+  margin-left: -15px;
+}
+.wrapper .info img:hover {
+  position: relative;
+}
+.wrapper .info span {
+  font-size: 13px;
+  color: var(--grey-c);
+  align-self: flex-end;
+}
